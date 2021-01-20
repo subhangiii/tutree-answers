@@ -1,0 +1,107 @@
+Paper - 3
+
+Q1. Union and Intersection of two sorted arrays.
+
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+
+using namespace std;
+
+
+void unionn(int arr1[], int arr2[], int n, int m) 
+{ 
+    int i = 0, j = 0; 
+    while (i < m && j < n)
+    { 
+        if (arr1[i] < arr2[j]) 
+            cout << arr1[i++] << " "; 
+  
+        else if (arr2[j] < arr1[i]) 
+            cout << arr2[j++] << " "; 
+  
+        else { 
+            cout << arr2[j++] << " "; 
+            i++; 
+    } 
+    while (i < m) 
+        cout << arr1[i++] << " "; 
+  
+    while (j < n) 
+        cout << arr2[j++] << " ";
+} 
+int intersection(int arr1[], int arr2[], int m, int n) 
+{ 
+    int i = 0, j = 0; 
+    while (i < m && j < n)
+    { 
+        if (arr1[i] < arr2[j]) 
+            i++; 
+        else if (arr2[j] < arr1[i]) 
+            j++; 
+        else 
+        { 
+            cout << arr2[j] << " "; 
+            i++; 
+            j++; 
+        } 
+    } 
+} 
+  
+int main()  
+{ 
+    int n,m,i,j,arr1[100], arr2[100];
+    cout<<"number of elements in array1: ";
+    cin>>n;
+    cout<<"Elements (array1): ";
+    for(int i=0;i<n;i++)
+        cin>>arr1[i];
+    cout<<"number of elements in array2: ";
+    cin>>m;
+    cout<<"Elements (array2): ";
+    for(int j=0; j<m; j++)
+        cin>>arr2[i];
+    unionn(arr1,arr2,n,m);
+    intersection(arr1,arr2,n,m);
+    return 0;
+} 
+
+
+
+Program for array rotation.
+
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+
+using namespace std;
+
+void rotate(int a[],int x,int y)
+{
+    int i,index;
+    for(i=0;i<y;i++)
+    {
+        if(x==a[i])
+            index = i;
+    }
+    for(i = index+1; i <y;i++)
+        cout<<a[i]<<" ";
+    for(i=0;i<=index;i++)
+        cout<<a[i]<<" ";
+}
+
+
+
+int main()  
+{   
+    int arr[100],d, n, i;
+    cout<<"no. of elements: ";
+    cin>>n;
+    cout<<"elements: ";
+    for(i=0;i<n;i++)
+        cin>>arr[i];
+    cout<<"Enter d: ";
+    cin>>d;
+    rotate(arr,d,n);
+    return 0;
+} 
