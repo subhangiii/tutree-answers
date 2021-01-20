@@ -1,0 +1,92 @@
+Paper - 2
+
+
+1. Write a program to print all the LEADERS in the array. An element is leader if it is greater than all the elements to its right side. And the rightmost element is always a leader. For example int the array {16, 17, 4, 3, 5, 2}, leaders are 17, 5 and 2.
+
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+
+using namespace std;
+
+void leader(int a[],int x)
+{
+    int j,i;
+    for (i = 0; i < x; i++) 
+    { 
+        for ( j = i+1; j < x; j++) 
+        { 
+            if (a[i] < a[j]) 
+                break; 
+        }     
+        if (j == x) 
+            cout << a[i] << " "; 
+  } 
+}
+
+
+
+int main()  
+{   
+    int arr[100],d, n, i;
+    cout<<"no. of elements: ";
+    cin>>n;
+    cout<<"elements: ";
+    for(i=0;i<n;i++)
+        cin>>arr[i];
+    leader(arr,n);
+    return 0;
+} 
+
+
+
+2. Program to print following pattern:
+
+Input:- 5
+
+Output:- 
+
+*                  *
+* *              * *
+* * *          * * *
+* * * *      * * * *
+* * * * *  * * * * *
+* * * * *  * * * * *
+* * * *      * * * *
+* * *          * * *
+* *              * *
+*                  *
+
+
+#include <stdio.h>
+#include <math.h>
+#include <iostream>
+
+using namespace std;
+
+
+int main()  
+{   
+    int i,j,x;
+    cin>>x;
+    for(i=1,k=1;i<=x,k<=x;i++,k++)
+    {
+        for(j=1;j<=i;j++)
+            cout<<"*";
+        cout<<endl;
+    }
+    for(i=x;i>=1;i--)
+    {
+        for(j=i;j>=1;j--)
+            cout<<"*";
+        cout<<endl;
+    }
+
+    return 0;
+    
+} 
+
+
+
+
+
